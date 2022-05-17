@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'place',
     'vehicle',
     'rest_framework',
-    'rest_framework.simplejwt',
+    # 'rest_framework.simplejwt',
 ]
 
 MIDDLEWARE = [

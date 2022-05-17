@@ -11,7 +11,7 @@ class Place(models.Model):
     address = models.CharField(max_length=100)
     
     def __str__(self):
-        return self.name_address
+        return self.name
     
     @property
     def name_address(self) -> str:
@@ -19,12 +19,12 @@ class Place(models.Model):
     
 class Rack(models.Model):
     number = models.IntegerField(null = False)
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    uuid = models.UUIDField(default=uuid.uuid4())
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
-    statu = models.BooleanField(default=True)
+    status = models.BooleanField(default=True)
     
     def __str__(self):
-        return f"{self.place.name} | {self.number}"
+        return f"{self.place.id} | {self.number}"
     
     @property
     def name_uuid(self)-> dict:
