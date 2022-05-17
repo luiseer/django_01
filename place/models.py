@@ -18,7 +18,7 @@ class Place(models.Model):
         return f"{self.name} | {self.address}"
     
 class Rack(models.Model):
-    number = models.IntegerField(null = False)
+    number = models.IntegerField(null = False, unique=True)
     uuid = models.UUIDField(default=uuid.uuid4())
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)

@@ -5,3 +5,4 @@ from .models import Place, Rack, RackItem
 
 admin.site.register(Place)
 admin.site.register(Rack)
+admin.site.register(RackItem)
