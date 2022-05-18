@@ -43,17 +43,17 @@ class RackItem(models.Model):
 
 @receiver(post_save, sender=RackItem)
 def update_status_rack(sender, instance, created, **kwargs):
-    if created:
-        rack_item = instance
-        rack_id = rack_item.rack.id
-        rack = Rack.objects.get(id=rack_id)
-        rack.statu = False
-        rack.save()
+    
+    rack_item = instance
+    rack_id = rack_item.rack.id
+    rack = Rack.objects.get(pk=rack_id)
+    rack.statu = False
+    rack.save()
 
 @receiver(post_delete, sender=RackItem)
 def update_status_rack_delete(sender, instance, **kwargs):
     rack_item = instance
     rack_id = rack_item.rack.id
-    rack = Rack.objects.get(id=rack_id)
+    rack = Rack.objects.get(pk=rack_id)
     rack.statu = True
     rack.save()
