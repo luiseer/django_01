@@ -22,6 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-baco39c7jc_7y+ct@-wf86biv1%iy)7^lrhs5fj36toljdn6%i'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
