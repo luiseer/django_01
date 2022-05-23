@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-baco39c7jc_7y+ct@-wf86biv1%iy)7^lrhs5fj36toljdn6%i'
-
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -140,10 +140,16 @@ REST_FRAMEWORK = {
     )
 }
 
+<<<<<<< HEAD
 from datetime import timedelta
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
+=======
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=3),
+>>>>>>> 8347742c80d2aadeb0033aa98ac5241fd923aca9
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
@@ -173,4 +179,7 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8347742c80d2aadeb0033aa98ac5241fd923aca9
